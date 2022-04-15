@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 23:31:32 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/15 01:26:27 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/04/15 17:04:22 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ void	Account::displayStatus(void) const
 void	Account::_displayTimestamp(void)
 {
 	std::time_t	timeval (std::time(0));
-
 	tm			tm (*std::localtime(&timeval));
+
 	std::cout << std::setfill('0') << '[' << (tm.tm_year + 1900)
 			  << std::setw(2) << tm.tm_mon
 			  << std::setw(2) << tm.tm_mday << '_'
