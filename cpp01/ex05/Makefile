@@ -6,13 +6,13 @@
 #    By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 10:25:16 by nfaivre           #+#    #+#              #
-#    Updated: 2022/04/20 18:35:14 by nfaivre          ###   ########.fr        #
+#    Updated: 2022/04/20 19:18:51 by nfaivre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .DEFAULT_GOAL = all
 
-NAME = Harl
+NAME = test_Harl_class
 
 CXX = g++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
