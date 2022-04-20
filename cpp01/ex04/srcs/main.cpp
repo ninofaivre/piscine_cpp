@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 21:20:23 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/19 23:11:51 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/04/20 17:12:53 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,23 @@
 #include <string>
 #include <stdlib.h>
 
-std::string	getFileContent(const char *filePath)
+static std::string	getFileContent(const std::string inputFilePath)
 {
 	std::string		fileContent;
-	std::ifstream	ifs (filePath);
+	std::ifstream	inputFile;
 
-	if (!ifs.good())
-		exit (EXIT_FAILURE);
-	while (!ifs.eof())
-		fileContent.push_back(ifs.get());
-	ifs.close();
+	if (!inputFilePath.length())
+		throw "Empty file name.";
+	inputFile.open(inputFilePath.c_str());
+	if (!inputFile.is_open())
+		throw "Input file can't be opened check for rights or existence.";
+	while (!inputFile.eof())
+		fileContent.push_back(inputFile.get());
+	inputFile.close();
 	return (fileContent);
 }
 
-std::string	replaceString(std::string fileContent, std::string little, std::string replaced)
+static void		replaceString(std::string &fileContent, const std::string little, const std::string replaced)
 {
 	std::string		buffer;
 
@@ -39,19 +42,36 @@ std::string	replaceString(std::string fileContent, std::string little, std::stri
 		fileContent += replaced;
 		fileContent += buffer.substr(little.length());
 	}
-	return (fileContent);
 }
 
-int	main(int argc, const char **argv)
+static void		writeOutputFile(const std::string inputFileName, const std::string little, const std::string replaced)
 {
-	std::string	fileContent;
+	std::string		fileContent;
+	std::ofstream	outputFile;
 
-	if (argc != 4)
-		exit (EXIT_FAILURE);
-	fileContent = getFileContent(argv[1]);
-	fileContent = replaceString(fileContent, std::string (argv[2]), std::string (argv[3]));
-	std::ofstream	ofs ((std::string (argv[1]) + std::string ("_replaced")).c_str());
-	ofs << fileContent;
-	ofs.close();
+	if (!little.length())
+		throw "Empty sequence of characters to replace";
+	fileContent = getFileContent(inputFileName);
+	replaceString(fileContent, little, replaced);
+	outputFile.open((inputFileName + ".replace").c_str());
+	if (!outputFile.is_open())
+		throw "Output file can't be opened check for rights or existence.";
+	outputFile << fileContent;
+	outputFile.close();
+}
+
+int	main(const int argc, const char **argv)
+{
+	try
+	{
+		if (argc != 4)
+			throw "Bad Number of arguments (need 3).";
+		writeOutputFile(argv[1], argv[2], argv[3]);
+	}
+	catch (const char *error)
+	{
+		std::cerr << "Error : " << error << std::endl;
+		return (EXIT_FAILURE);
+	}
 	return (EXIT_SUCCESS);
 }
