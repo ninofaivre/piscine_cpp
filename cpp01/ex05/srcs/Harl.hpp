@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:33:48 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/20 19:15:20 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/04/21 16:28:00 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
 	Harl(void);
 	~Harl(void);
 
-	void	complain(std::string level) const;
+	void	complain(const std::string level) const;
 
 };
 
