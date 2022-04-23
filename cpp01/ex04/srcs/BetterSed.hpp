@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   BetterSed.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 21:20:23 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/23 13:10:09 by nfaivre          ###   ########.fr       */
+/*   Created: 2022/04/23 13:08:12 by nfaivre           #+#    #+#             */
+/*   Updated: 2022/04/23 13:08:48 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BetterSed.hpp"
-#include <stdlib.h>
-#include <iostream>
+#ifndef BETTERSED_HPP
+# define BETTERSED_HPP
 
-int	main(const int argc, const char **argv)
+# include <string>
+
+namespace BetterSed
 {
-	try
-	{
-		if (argc != 4)
-			throw "Bad Number of arguments (need 3).";
-		BetterSed::writeOutputFile(argv[1], argv[2], argv[3]);
-	}
-	catch (const char *error)
-	{
-		std::cerr << "Error : " << error << std::endl;
-		return (EXIT_FAILURE);
-	}
-	return (EXIT_SUCCESS);
+	void	writeOutputFile(const std::string inputFileName, const std::string little, const std::string replaced);
 }
+
+#endif
