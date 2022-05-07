@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 22:38:56 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/14 23:57:23 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/07 23:07:03 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	Contact::set_fields_value(void)
 		{
 			std::cout << this->fields_name[i] << " > ";
 			std::getline(std::cin, this->fields_value[i]);
+			if (!std::cin.good())
+				return ;
 			if (!this->fields_value[i].length())
 				std::cout << "! Fields can't be empty !" << std::endl;
 		}

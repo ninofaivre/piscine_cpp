@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 23:18:14 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/15 18:32:53 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/07 23:11:20 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ void	PhoneBook::search(void) const
 				  << (((this->amount < this->max_amount) ? (this->amount) : (this->max_amount)) - 1) << " #" << std::endl
 				  << "> ";
 		std::getline(std::cin, buffer);
+		if (!std::cin.good())
+			return ;
 		if (!is_valid_search_index(buffer, this->amount))
 			std::cout << "! Index out of range or bad input !" << std::endl;
 	}

@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 22:48:25 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/14 03:24:51 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/07 23:45:04 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ int	main()
 	std::cout << HELP << std::endl;
 	while (buffer.compare("EXIT"))
 	{
+		if (!std::cin.good())
+		{
+			std::cout << std::endl << "! You closed cin !" << std::endl;
+			return (1);
+		}
 		std::cout << "> ";
 		std::getline(std::cin, buffer);
 		if (!buffer.compare("ADD"))
@@ -34,7 +39,7 @@ int	main()
 			std::cout << "\x1B[2J\x1B[H";
 		else if (!buffer.compare("HELP"))
 			std::cout << HELP << std::endl;
-		else if (buffer.compare("EXIT") && buffer.length())
+		else if (buffer.compare("EXIT") && buffer.length() && std::cin.good())
 			std::cout << "! Not a valid command !" << std::endl;
 	}
 	std::cout << "# GOODBYE #" << std::endl;
