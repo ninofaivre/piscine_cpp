@@ -18,7 +18,7 @@
 int	main(int argc, const char **argv)
 {
 	if (argc == 1)
-		std::cout << DEFAULT_MESSAGE << std::endl;
+		std::cout << DEFAULT_MESSAGE;
 	else
 	{
 		for (int i = 1; i < argc; i++)
@@ -26,8 +26,8 @@ int	main(int argc, const char **argv)
 			std::string arg (argv[i]);
 			for (size_t j = 0; j < arg.length(); j++)
 				std::cout << (char)std::toupper(arg[j]);
-			std::cout << std::endl;
 		}
 	}
+	std::cout << std::endl;
 	return (0);
 }
