@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 13:50:57 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/10 13:25:18 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/10 16:40:26 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ static Fixed		min(Fixed &firstInst, Fixed &secondInst);
 static Fixed		max(Fixed &firstInst, Fixed &secondInst);
 static const Fixed	min(const Fixed &firstInst, const Fixed &secondInst);
 static const Fixed	max(const Fixed &firstInst, const Fixed &secondInst);
+
 };
 
 std::ostream	&operator<<(std::ostream &stream, Fixed inst);
