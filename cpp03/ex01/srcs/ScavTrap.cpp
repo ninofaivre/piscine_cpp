@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:26:30 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/11 11:17:46 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/11 11:42:09 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ void	ScavTrap::attack(const std::string &target)
 
 void	guardGate(void)
 {
+	this->printPreAction();
 	std::cout << " hast entered in Gate keeper mode !" << std::endl;
 }
