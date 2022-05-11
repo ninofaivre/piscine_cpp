@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:26:35 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/10 18:39:02 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/11 11:26:49 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,22 @@ ClapTrap::~ClapTrap(void)
 {
 	std::cout << "A ClapTrap died !" << std::endl
 			  << "Say goodbye to " << this->name << " !" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &otherInst)
+: name(otherInst.name), hitPoints(otherInst.hitPoints), energyPoints(otherInst.energyPoints), attackDamage(otherInst.attackDamage)
+{
+	std::cout << "A new ClapTrap has born !" << std::endl
+			  << "Say welcome to " << name << " !" << std::endl;
+}
+
+ClapTrap	&ClapTrap::operator=(const ClapTrap &otherInst)
+{
+	this->name = otherInst.name;
+	this->hitPoints = otherInst.hitPoints;
+	this->energyPoints = otherInst.energyPoints;
+	this->attackDamage = otherInst.attackDamage;
+	return (*this);
 }
 
 bool	ClapTrap::isAliveAndAwake(void)
