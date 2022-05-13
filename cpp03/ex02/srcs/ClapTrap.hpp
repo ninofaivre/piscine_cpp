@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:38:37 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/11 11:22:39 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 14:08:26 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ protected:
 	unsigned int	energyPoints;
 	unsigned int	attackDamage;
 
-	bool	isAliveAndAwake(void);
-	void	printPreAction(void);
+	bool	isAliveAndAwake(void) const;
+	void	printPreAction(void) const;
 
 
 public:
 	
-	ClapTrap(const std::string name);
+	ClapTrap(const std::string &name = "Default ClapTrap name (no one given)");
 	ClapTrap(const ClapTrap &otherInst);
 	~ClapTrap(void);
 

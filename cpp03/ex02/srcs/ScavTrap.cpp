@@ -6,14 +6,14 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:26:30 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/11 11:48:01 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 14:19:46 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include <iostream>
 
-ScavTrap::ScavTrap(const std::string name)
+ScavTrap::ScavTrap(const std::string &name)
 : ClapTrap(name)
 {
 	this->hitPoints = 100;
@@ -26,9 +26,7 @@ ScavTrap::ScavTrap(const std::string name)
 ScavTrap::ScavTrap(const ScavTrap &otherInst)
 : ClapTrap(otherInst.name)
 {
-	this->hitPoints = otherInst.hitPoints;
-	this->energyPoints = otherInst.energyPoints;
-	this->attackDamage = otherInst.attackDamage;
+	*this = otherInst;
 	std::cout << "A new ScavTrap has born !" << std::endl
 			  << "Say welcome to " << name << " !" << std::endl;
 }
@@ -48,7 +46,7 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &otherInst)
 	return (*this);
 }
 
-void	ScavTrap::printPreAction(void)
+void	ScavTrap::printPreAction(void) const
 {
 	std::cout << "ScavTrap " << this->name;
 }
@@ -66,8 +64,8 @@ void	ScavTrap::attack(const std::string &target)
 			  << "It remains " << this->energyPoints << " energyPoints." << std::endl;
 }
 
-void	ScavTrap::guardGate(void)
+void	ScavTrap::guardGate(void) const
 {
 	this->printPreAction();
-	std::cout << " has entered in Gate keeper mode !" << std::endl;
+	std::cout << " hast entered in Gate keeper mode !" << std::endl;
 }
