@@ -6,17 +6,12 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:00:36 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/05 12:55:17 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 13:58:48 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <cmath>
-
-Fixed::Fixed(void)
-: rawBits(0)
-{
-}
 
 Fixed::Fixed(const int num)
 : rawBits(num << Fixed::nBits)
@@ -29,8 +24,8 @@ Fixed::Fixed(const float num)
 }
 
 Fixed::Fixed(const Fixed &otherInst)
-: rawBits(otherInst.getRawBits())
 {
+	*this = otherInst;
 }
 
 Fixed::~Fixed(void)
@@ -39,7 +34,7 @@ Fixed::~Fixed(void)
 
 Fixed	&Fixed::operator=(const Fixed &otherInst)
 {
-	this->rawBits = otherInst.getRawBits();
+	this->rawBits = otherInst.rawBits;
 	return (*this);
 }
 
@@ -63,7 +58,7 @@ int		Fixed::toInt(void) const
 	return (this->rawBits >> Fixed::nBits);
 }
 
-std::ostream	&operator<<(std::ostream &stream, Fixed &inst)
+std::ostream	&operator<<(std::ostream &stream, const Fixed &inst)
 {
 	stream << inst.toFloat();
 	return (stream);

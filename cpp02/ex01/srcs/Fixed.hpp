@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 13:50:57 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/05 12:54:51 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 13:58:56 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ static const int	nBits = 8;
 
 public:
 
-Fixed(void);
-Fixed(const int num);
+Fixed(const int num = 0);
 Fixed(const float num);
 Fixed(const Fixed &otherInst);
 ~Fixed(void);
@@ -42,6 +41,6 @@ int		toInt(void) const;
 
 };
 
-std::ostream	&operator<<(std::ostream &stream, Fixed &inst);
+std::ostream	&operator<<(std::ostream &stream, const Fixed &inst);
 
 #endif
