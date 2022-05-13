@@ -25,8 +25,7 @@ private:
 
 public:
 	
-	Zombie(std::string name);
-	Zombie(void);
+	Zombie(const std::string name = "Default Zombie name (no one given)");
 	~Zombie(void);
 
 	static Zombie	*zombieHorde(int N, std::string name);
