@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:00:36 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/04 14:23:21 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 13:41:11 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ Fixed::Fixed(void)
 }
 
 Fixed::Fixed(const Fixed &otherInst)
-: rawBits(otherInst.getRawBits())
 {
+	*this = otherInst;
 }
 
 Fixed::~Fixed(void)
@@ -28,7 +28,7 @@ Fixed::~Fixed(void)
 
 Fixed	&Fixed::operator=(const Fixed &otherInst)
 {
-	this->rawBits = otherInst.getRawBits();
+	this->rawBits = otherInst.rawBits;
 	return (*this);
 }
 
