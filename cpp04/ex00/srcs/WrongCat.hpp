@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:26:54 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/12 12:39:53 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 14:43:52 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 
 	WrongCat	&operator=(const WrongCat &otherInst);
 
-	void	makeSound(void);
+	void	makeSound(void) const;
 
 };
 

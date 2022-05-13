@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:26:54 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/12 11:47:55 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 14:40:49 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 
 	Dog	&operator=(const Dog &otherInst);
 
-	virtual void	makeSound(void);
+	virtual void	makeSound(void) const;
 
 };
 

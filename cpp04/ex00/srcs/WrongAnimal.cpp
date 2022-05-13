@@ -6,20 +6,14 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:15:00 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/12 12:33:05 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 14:42:28 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 #include <iostream>
 
-WrongAnimal::WrongAnimal(void)
-{
-	std::cout << "# WrongAnimal default constructor called #" << std::endl;
-	this->type.clear();
-}
-
-WrongAnimal::WrongAnimal(const std::string type)
+WrongAnimal::WrongAnimal(const std::string &type)
 : type(type)
 {
 	std::cout << "# WrongAnimal type constructor called #" << std::endl;
@@ -42,12 +36,12 @@ WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &otherInst)
 	return (*this);
 }
 
-std::string	WrongAnimal::getType(void)
+std::string	WrongAnimal::getType(void) const
 {
 	return (this->type);
 }
 
-void		WrongAnimal::makeSound(void)
+void		WrongAnimal::makeSound(void) const
 {
 	std::cout << "You know, I no dot really exist by my own..." << std::endl;
 }

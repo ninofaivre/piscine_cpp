@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:10:58 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/12 11:39:48 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 14:36:05 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,14 @@ protected:
 
 public:
 
-	Animal(void);
-	Animal(const std::string type);
+	Animal(const std::string &type = "");
 	Animal(const Animal &otherInst);
 	virtual ~Animal(void);
 
 	Animal	&operator=(const Animal &otherInst);
 
-	std::string	getType(void);
-	virtual void		makeSound(void);
+	std::string		getType(void) const;
+	virtual void	makeSound(void) const;
 	
 };
 

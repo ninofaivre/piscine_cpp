@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:29:32 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/12 12:34:00 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 14:43:37 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ WrongCat	&WrongCat::operator=(const WrongCat &otherInst)
 	return (*this);
 }
 
-void	WrongCat::makeSound(void)
+void	WrongCat::makeSound(void) const
 {
 	std::cout << "MEEEOOOWWWWWW !!!" << std::endl;
 }
