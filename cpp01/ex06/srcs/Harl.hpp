@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:33:48 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/21 16:10:48 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 16:54:37 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ public:
 	Harl(void);
 	~Harl(void);
 
-	void	complain(const std::string level) const;
-	void	complainsALot(const std::string level) const;
+	void	complain(const std::string &level) const;
+	void	complainsALot(const std::string &level) const;
 
 	static const std::string	complainStringLvl[4];
 	enum	{ debugLvl, infoLvl, warningLvl, errorLvl };

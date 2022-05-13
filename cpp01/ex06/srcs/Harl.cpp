@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:39:03 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/21 16:26:21 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 16:55:50 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	Harl::error(void) const
 	std::cerr << this->complainStringValue[errorLvl] << std::endl;
 }
 
-void	Harl::complain(const std::string level) const
+void	Harl::complain(const std::string &level) const
 {
 	for (int i = debugLvl; i <= errorLvl; i++)
 	{
@@ -74,7 +74,7 @@ void	Harl::complain(const std::string level) const
 	}
 }
 
-void	Harl::complainsALot(const std::string level) const
+void	Harl::complainsALot(const std::string &level) const
 {
 	bool	complainsSwitch = false;
 
