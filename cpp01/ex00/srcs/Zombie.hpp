@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 18:42:52 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/15 20:31:07 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 16:22:52 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ private:
 
 public:
 	
-	Zombie(std::string name);
+	Zombie(const std::string &name = "Default Zombie name (no one given)");
 	~Zombie(void);
 
-	static Zombie	*newZombie(std::string name);
-	static void		randomChump(std::string name);
+	static Zombie	*newZombie(const std::string &name);
+	static void		randomChump(const std::string &name);
 
 	void			announce(void) const;
 

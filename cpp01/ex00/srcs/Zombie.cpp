@@ -6,14 +6,14 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 18:51:44 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/15 19:24:45 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 16:19:19 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(const std::string &name)
 : name(name)
 {
 }
