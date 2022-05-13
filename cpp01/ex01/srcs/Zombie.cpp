@@ -18,11 +18,6 @@ Zombie::Zombie(std::string name)
 {
 }
 
-Zombie::Zombie(void)
-:name(std::string ())
-{
-}
-
 Zombie::~Zombie(void)
 {
 	std::cout << this->name << " : died" << std::endl;
