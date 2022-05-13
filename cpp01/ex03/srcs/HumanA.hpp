@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:28:57 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/18 19:58:32 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 16:42:32 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ private:
 
 public:
 
-	HumanA(std::string name, Weapon &weapon);
+	HumanA(const std::string &name, Weapon &weapon);
 	~HumanA(void);
 
-	void	attack(void);
+	void	attack(void) const;
 
 };
 
