@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 13:50:57 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/10 16:40:26 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 13:57:56 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ static const int	nBits = 8;
 
 public:
 
-Fixed(void);
-Fixed(const int num);
+Fixed(const int num = 0);
 Fixed(const float num);
 Fixed(const Fixed &otherInst);
 ~Fixed(void);
