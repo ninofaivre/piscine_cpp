@@ -6,14 +6,14 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:26:35 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/11 11:26:49 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 14:05:03 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap(const std::string name)
+ClapTrap::ClapTrap(const std::string &name)
 : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
 	std::cout << "A new ClapTrap has born !" << std::endl
@@ -27,8 +27,8 @@ ClapTrap::~ClapTrap(void)
 }
 
 ClapTrap::ClapTrap(const ClapTrap &otherInst)
-: name(otherInst.name), hitPoints(otherInst.hitPoints), energyPoints(otherInst.energyPoints), attackDamage(otherInst.attackDamage)
 {
+	*this = otherInst;
 	std::cout << "A new ClapTrap has born !" << std::endl
 			  << "Say welcome to " << name << " !" << std::endl;
 }
@@ -42,7 +42,7 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &otherInst)
 	return (*this);
 }
 
-bool	ClapTrap::isAliveAndAwake(void)
+bool	ClapTrap::isAliveAndAwake(void) const
 {
 	if (this->hitPoints && this->energyPoints)
 		return (true);
@@ -51,7 +51,7 @@ bool	ClapTrap::isAliveAndAwake(void)
 	return (false);
 }
 
-void	ClapTrap::printPreAction(void)
+void	ClapTrap::printPreAction(void) const
 {
 	std::cout << "ClapTrap " << this->name;
 }

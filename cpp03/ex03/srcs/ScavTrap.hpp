@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:21:53 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/11 15:21:54 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/13 14:29:39 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,21 @@
 class ScavTrap : virtual public ClapTrap
 {
 
-protected:
+private:
 
-	void	printPreAction(void);
+	void	printPreAction(void) const;
 
 
 public:
 
-	ScavTrap(const std::string name);
+	ScavTrap(const std::string &name = "Default ScavTrap name (no one given)");
 	ScavTrap(const ScavTrap &otherInst);
 	~ScavTrap(void);
 
 	ScavTrap	&operator=(const ScavTrap &otherInst);
 
 	void	attack(const std::string &target);
-	void	guardGate(void);
+	void	guardGate(void) const;
 
 };
 
