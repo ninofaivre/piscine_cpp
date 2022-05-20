@@ -6,18 +6,20 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 13:09:03 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/23 13:10:18 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/20 17:48:26 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BetterSed.hpp"
 #include <fstream>
 #include <string>
+#include <iostream>
 
 static std::string	getFileContent(const std::string inputFilePath)
 {
 	std::string		fileContent;
 	std::ifstream	inputFile;
+	int				getReturn;
 
 	if (!inputFilePath.length())
 		throw "Empty file name.";
@@ -25,7 +27,11 @@ static std::string	getFileContent(const std::string inputFilePath)
 	if (!inputFile.is_open())
 		throw "Input file can't be opened check for rights or existence.";
 	while (!inputFile.eof())
-		fileContent.push_back(inputFile.get());
+	{
+		getReturn = inputFile.get();
+		if (getReturn >= 0)
+			fileContent.push_back(getReturn);
+	}
 	inputFile.close();
 	return (fileContent);
 }
