@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:39:03 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 16:55:50 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/20 20:58:41 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,18 +76,24 @@ void	Harl::complain(const std::string &level) const
 
 void	Harl::complainsALot(const std::string &level) const
 {
-	bool	complainsSwitch = false;
-
-	for (int i = debugLvl; i <= errorLvl; i++)
+	int	iLvl = 0;
+	while (iLvl <= errorLvl && this->complainStringLvl[iLvl] != level)
+		iLvl++;
+	switch (iLvl)
 	{
-		if (level == complainStringLvl[i])
-			complainsSwitch = true;
-		if (complainsSwitch)
-		{
-			this->complain(this->complainStringLvl[i]);
-			std::cout << std::endl;
-		}
-	}
-	if (!complainsSwitch)
+	case debugLvl:
+		(this->*complainFunctionLvl[debugLvl])();
+		__attribute__ ((fallthrough));
+	case infoLvl:
+		(this->*complainFunctionLvl[infoLvl])();
+		__attribute__ ((fallthrough));
+	case warningLvl:
+		(this->*complainFunctionLvl[warningLvl])();
+		__attribute__ ((fallthrough));
+	case errorLvl:
+		(this->*complainFunctionLvl[errorLvl])();
+		break ;
+	default:
 		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	}
 }
