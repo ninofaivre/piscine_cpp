@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 13:09:03 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/20 17:48:26 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/20 18:56:02 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,15 @@ static std::string	getFileContent(const std::string inputFilePath)
 	if (!inputFilePath.length())
 		throw "Empty file name.";
 	inputFile.open(inputFilePath.c_str());
-	if (!inputFile.is_open())
+	if (inputFile.fail())
 		throw "Input file can't be opened check for rights or existence.";
 	while (!inputFile.eof())
 	{
 		getReturn = inputFile.get();
 		if (getReturn >= 0)
 			fileContent.push_back(getReturn);
+		else
+			break ;
 	}
 	inputFile.close();
 	return (fileContent);
@@ -57,6 +59,8 @@ void			BetterSed::writeOutputFile(const std::string inputFileName, const std::st
 	if (!little.length())
 		throw "Empty sequence of characters to replace";
 	fileContent = getFileContent(inputFileName);
+	if (!fileContent.length())
+		throw "Empty File or Directory given as argument";
 	replaceString(fileContent, little, replaced);
 	outputFile.open((inputFileName + ".replace").c_str());
 	if (!outputFile.is_open())
