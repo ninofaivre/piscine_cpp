@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 23:31:32 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/15 17:04:22 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/20 12:57:21 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,5 @@ void	Account::_displayTimestamp(void)
 			  << std::setw(2) << tm.tm_mday << '_'
 			  << std::setw(2) << tm.tm_hour
 			  << std::setw(2) << tm.tm_min
-			  << std::setw(2) << tm.tm_sec << ']';
+			  << std::setw(2) << tm.tm_sec << "] ";
 }
