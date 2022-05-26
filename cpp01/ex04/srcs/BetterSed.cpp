@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 13:09:03 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/20 18:56:02 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/27 00:08:14 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <string>
 #include <iostream>
 
-static std::string	getFileContent(const std::string inputFilePath)
+static std::string		getFileContent(const std::string inputFilePath)
 {
 	std::string		fileContent;
 	std::ifstream	inputFile;
@@ -38,30 +38,30 @@ static std::string	getFileContent(const std::string inputFilePath)
 	return (fileContent);
 }
 
-static void		replaceString(std::string &fileContent, const std::string little, const std::string replaced)
+static std::string		replaceString(std::string oldFileContent, const std::string little, const std::string replaced)
 {
-	std::string		buffer;
+	std::string		newFileContent;
 
-	while (fileContent.find(little) != std::string::npos)
+	while (oldFileContent.find(little) != std::string::npos)
 	{
-		buffer = fileContent.substr(fileContent.find(little));
-		fileContent = fileContent.substr(0, fileContent.find(little));
-		fileContent += replaced;
-		fileContent += buffer.substr(little.length());
+		newFileContent += oldFileContent.substr(0, oldFileContent.find(little));
+		newFileContent += replaced;
+		oldFileContent = oldFileContent.substr(oldFileContent.find(little) + little.length());
 	}
+	newFileContent += oldFileContent;
+	return (newFileContent);
 }
 
-void			BetterSed::writeOutputFile(const std::string inputFileName, const std::string little, const std::string replaced)
+void					BetterSed::writeOutputFile(const std::string inputFileName, const std::string little, const std::string replaced)
 {
 	std::string		fileContent;
 	std::ofstream	outputFile;
 
-	if (!little.length())
-		throw "Empty sequence of characters to replace";
 	fileContent = getFileContent(inputFileName);
 	if (!fileContent.length())
 		throw "Empty File or Directory given as argument";
-	replaceString(fileContent, little, replaced);
+	if (little != replaced && little.length())
+		fileContent = replaceString(fileContent, little, replaced);
 	outputFile.open((inputFileName + ".replace").c_str());
 	if (!outputFile.is_open())
 		throw "Output file can't be opened check for rights or existence.";
