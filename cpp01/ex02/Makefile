@@ -14,7 +14,7 @@
 
 NAME = test_cpp01-02
 
-CXX = g++
+CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 VPATH =
