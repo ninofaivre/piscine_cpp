@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:10:58 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 15:34:35 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 09:00:26 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#pragma once
 
 # include <string>
 
@@ -35,5 +34,3 @@ public:
 	virtual void	makeSound(void) const;
 	
 };
-
-#endif

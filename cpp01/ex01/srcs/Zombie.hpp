@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 18:42:52 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 16:28:59 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 08:54:31 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#pragma once
 
 # include <string>
 
@@ -32,5 +31,3 @@ public:
 	void			announce(void) const;
 
 };
-
-#endif

@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:38:37 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 14:08:26 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 08:57:17 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#pragma once
 
 # include <string>
 
@@ -42,5 +41,3 @@ public:
 	void	beRepaired(const unsigned int amount);
 
 };
-
-#endif

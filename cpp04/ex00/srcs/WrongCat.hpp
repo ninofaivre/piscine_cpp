@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:26:54 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 14:43:52 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 08:59:29 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#pragma once
 
 # include "WrongAnimal.hpp"
 
@@ -29,5 +28,3 @@ public:
 	void	makeSound(void) const;
 
 };
-
-#endif

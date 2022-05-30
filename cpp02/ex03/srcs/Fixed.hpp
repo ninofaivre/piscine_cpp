@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 13:50:57 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 13:57:56 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 08:56:24 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#pragma once
 
 # include <iostream>
 
@@ -64,5 +63,3 @@ static const Fixed	max(const Fixed &firstInst, const Fixed &secondInst);
 };
 
 std::ostream	&operator<<(std::ostream &stream, Fixed inst);
-
-#endif

@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:33:48 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 16:54:37 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 08:55:35 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-# define HARL_HPP
+#pragma once
 
 # include <string>
 
@@ -41,5 +40,3 @@ public:
 	enum	{ debugLvl, infoLvl, warningLvl, errorLvl };
 
 };
-
-#endif

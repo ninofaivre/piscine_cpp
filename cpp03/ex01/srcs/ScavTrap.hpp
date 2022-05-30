@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:21:53 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 14:19:10 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 08:57:06 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#pragma once
 
 # include "ClapTrap.hpp"
 
@@ -35,5 +34,3 @@ public:
 	void	guardGate(void) const;
 
 };
-
-#endif

@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:28:57 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 16:42:32 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 08:54:43 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#pragma once
 
 # include "Weapon.hpp"
 # include <string>
@@ -33,5 +32,3 @@ public:
 	void	attack(void) const;
 
 };
-
-#endif

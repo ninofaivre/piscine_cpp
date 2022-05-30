@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 14:37:26 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 14:30:38 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 08:57:50 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
+#pragma once
 
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
@@ -35,5 +34,3 @@ public:
 	void	attack(const std::string &target);
 	void	whoAmI(void) const;
 };
-
-#endif

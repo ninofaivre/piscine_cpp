@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 22:17:16 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/14 23:52:20 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 08:41:32 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+# pragma once
 
 # include <string>
 
@@ -40,5 +39,3 @@ public:
 	void	display_preview_fields(void) const;
 
 };
-
-#endif

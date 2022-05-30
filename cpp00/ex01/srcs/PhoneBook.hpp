@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 23:05:31 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/04/15 00:19:04 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 08:41:52 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONE_BOOK_HPP
-#define PHONE_BOOK_HPP
+#pragma once
 
 # include "Contact.hpp"
 # include <string>
@@ -38,5 +37,3 @@ public:
 	void	search(void) const;
 
 };
-
-#endif

@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:33:48 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 16:51:46 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 08:55:26 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-# define HARL_HPP
+#pragma once
 
 # include <string>
 
@@ -39,5 +38,3 @@ public:
 	void	complain(const std::string &level) const;
 
 };
-
-#endif

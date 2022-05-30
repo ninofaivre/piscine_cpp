@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:26:54 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 15:20:26 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 09:00:53 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#pragma once
 
 # include "Animal.hpp"
 # include "Brain.hpp"
@@ -35,5 +34,3 @@ public:
 	virtual void	makeSound(void) const;
 
 };
-
-#endif

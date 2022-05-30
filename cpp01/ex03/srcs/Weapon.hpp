@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 19:23:42 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 16:35:11 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 08:55:03 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#pragma once
 
 # include <string>
 
@@ -32,5 +31,3 @@ public:
 	void				setType(const std::string &type);
 
 };
-
-#endif

@@ -6,12 +6,11 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 10:21:53 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 14:22:52 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 08:57:27 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#pragma once
 
 # include "ClapTrap.hpp"
 
@@ -35,5 +34,3 @@ public:
 	void	highFivesGuys(void) const;
 
 };
-
-#endif
