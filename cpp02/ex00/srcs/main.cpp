@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:07:36 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/04 14:24:41 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/05/30 06:49:16 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int	main(void)
 	std::cout << test.getRawBits() << std::endl;
 	std::cout << test2.getRawBits() << std::endl;
 	std::cout << (test2 = test).getRawBits() << std::endl;
+	std::cout << test2.getRawBits() << std::endl;
 	return (0);
 }

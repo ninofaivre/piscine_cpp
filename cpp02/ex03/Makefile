@@ -6,13 +6,13 @@
 #    By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 10:25:16 by nfaivre           #+#    #+#              #
-#    Updated: 2022/05/04 14:15:05 by nfaivre          ###   ########.fr        #
+#    Updated: 2022/05/30 07:02:21 by nfaivre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .DEFAULT_GOAL = all
 
-NAME = test_class_Fixed
+NAME = test_class_Point_and_BSP
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
