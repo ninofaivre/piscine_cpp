@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:26:54 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/30 09:00:08 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/01 23:28:41 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ public:
 	Cat	&operator=(const Cat &otherInst);
 
 	virtual void	makeSound(void) const;
+	Brain	*getBrain(void);
 
 };
