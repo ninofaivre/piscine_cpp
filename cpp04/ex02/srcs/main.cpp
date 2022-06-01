@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:19:24 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 15:34:46 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/02 00:01:19 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 #include <iostream>
+#include <exception>
 
 int	main(void)
 {
@@ -29,5 +30,6 @@ int	main(void)
 	}
 	for (int i = 0; i < 10; i++)
 		delete archeDeNoé[i];
+	//Animal	a; // not more working
 	return (0);
 }
