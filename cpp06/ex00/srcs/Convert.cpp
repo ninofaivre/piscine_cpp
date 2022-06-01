@@ -6,12 +6,13 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:13:17 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/06/01 11:35:50 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/01 16:25:36 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 #include <iostream>
+#include <iomanip>
 #include <cstdlib>
 #include <cmath>
 #include <climits>
@@ -81,16 +82,16 @@ void	Convert::displayFloat(void) const
 {
 	float	f = static_cast<float>(this->value);
 
-	std::cout << "float: " << f;
-	if (f == static_cast<int>(this->value) && !std::isnan(f))
-		std::cout << ".0";
-	std::cout << 'f' << std::endl;
+	std::cout << "float: ";
+	if (f == static_cast<int>(this->value))
+		std::cout << std::fixed << std::setprecision(1);
+	std::cout << f << 'f' << std::endl;
 }
 
 void	Convert::displayDouble(void) const
 {
-	std::cout << "double: " << this->value;
-	if (this->value == static_cast<int>(this->value) && !std::isnan(this->value))
-		std::cout << ".0";
-	std::cout << std::endl;
+	std::cout << "double: ";
+	if (this->value == static_cast<int>(this->value))
+		std::cout << std::fixed << std::setprecision(1);
+	std::cout << this->value << std::endl;
 }
