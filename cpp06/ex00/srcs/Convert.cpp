@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:13:17 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/06/01 11:30:21 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/01 11:35:50 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Convert	&Convert::operator=(const Convert &otherInst)
 	return (*this);
 }
 
-void	Convert::displayAll(void)
+void	Convert::displayAll(void) const
 {
 	this->displayChar();
 	this->displayInt();
@@ -49,7 +49,7 @@ void	Convert::displayAll(void)
 	this->displayDouble();
 }
 
-void	Convert::displayChar(void)
+void	Convert::displayChar(void) const
 {
 	char	c = static_cast<char>(this->value);
 
@@ -63,7 +63,7 @@ void	Convert::displayChar(void)
 	std::cout << std::endl;
 }
 
-void	Convert::displayInt(void)
+void	Convert::displayInt(void) const
 {
 	int	i = static_cast<int>(this->value);
 
@@ -77,7 +77,7 @@ void	Convert::displayInt(void)
 	std::cout << std::endl;
 }
 
-void	Convert::displayFloat(void)
+void	Convert::displayFloat(void) const
 {
 	float	f = static_cast<float>(this->value);
 
@@ -87,7 +87,7 @@ void	Convert::displayFloat(void)
 	std::cout << 'f' << std::endl;
 }
 
-void	Convert::displayDouble(void)
+void	Convert::displayDouble(void) const
 {
 	std::cout << "double: " << this->value;
 	if (this->value == static_cast<int>(this->value) && !std::isnan(this->value))
