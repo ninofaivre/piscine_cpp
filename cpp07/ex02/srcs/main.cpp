@@ -6,22 +6,12 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 18:05:14 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/06/01 21:24:11 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/01 21:29:54 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
-#include <iostream>
 #include <cstring>
-
-template<typename T>
-static void	printArray(Array<T> &ref, const std::string &name)
-{
-	std::cout << "Printing array " << name << " (size = " << ref.size() << ") :" << std::endl;
-	for (unsigned int i = 0; i < ref.size(); i++)
-		std::cout << ref[i] << " ";
-	std::cout << std::endl;
-}
 
 int	main(void)
 {

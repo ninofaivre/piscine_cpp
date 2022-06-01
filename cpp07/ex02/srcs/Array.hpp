@@ -6,12 +6,13 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 17:58:51 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/06/01 21:11:22 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/01 21:29:42 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+# include <iostream>
 # include <exception>
 
 template<typename T>
@@ -86,4 +87,13 @@ template<typename T>
 unsigned int	Array<T>::size(void) const
 {
 	return (this->_size);
+}
+
+template<typename T>
+void	printArray(Array<T> &ref, const std::string &name)
+{
+	std::cout << "Printing array " << name << " (size = " << ref.size() << ") :" << std::endl;
+	for (unsigned int i = 0; i < ref.size(); i++)
+		std::cout << ref[i] << " ";
+	std::cout << std::endl;
 }
