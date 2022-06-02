@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 18:05:14 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/06/01 21:29:54 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/02 13:42:27 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,14 @@ int	main(void)
 	printArray(test7, "test7");
 	std::cout << "&test7[0] : " << &test7[0] << std::endl
 			  << "strlen(&test7[0]) : " << strlen(&test7[0]) << std::endl;
+	try
+	{
+		std::cout << "test6[2] = \"wrong memory access\"" << std::endl;
+		test6[2] = "wrong memory access";
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	return (0);
 }
