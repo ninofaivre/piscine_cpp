@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 12:06:59 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/15 14:57:13 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/02 15:08:05 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ShrubberyCreationForm::beExecuted(void)
 
 	outputFile.open((this->target + "_shrubbery").c_str());
 	if (!outputFile.is_open())
-		throw "error";
+		throw ShrubberyCreationForm::TouchFileFailed();
 	outputFile << TREE;
 	outputFile.close();
 }
