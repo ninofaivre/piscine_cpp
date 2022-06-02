@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:15:38 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/15 14:32:52 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/02 14:48:08 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void			Bureaucrat::executeForm(Form &form) const
 	}
 	catch (std::exception &e)
 	{
-		std::cout << this->name << " couldn't sign Form " << form.getName() << " because [" << e.what() << ']' << std::endl;
+		std::cout << this->name << " couldn't execute Form " << form.getName() << " because [" << e.what() << ']' << std::endl;
 	}
 }
 
