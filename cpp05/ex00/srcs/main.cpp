@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:29:16 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/14 13:43:39 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/02 08:04:24 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,54 @@
 
 int	main(void)
 {
+	std::cout << "Breaucrat	test (\"Michel\")" << std::endl;
+	Bureaucrat	test ("Michel");
+	std::cout << "test : " << test << std::endl;
 	try
 	{
-		Bureaucrat test("Jean", 128);
-		std::cout << test << std::endl;
-		Bureaucrat lol("Bapt", 1);
-		std::cout << lol << std::endl;
-		lol = test;
-		std::cout << lol << std::endl;
-		Bureaucrat test2 (test);
-		std::cout << test2 << std::endl;
-		test2.promote();
-		std::cout << test2 << " " << test << std::endl;
-		Bureaucrat test3;
-		std::cout << test3 << std::endl;
-	}
-	catch (Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << "test1" << std::endl;
+		std::cout << "test.demote() : ";
+		test.demote();
+		std::cout << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		std::cout << "other" << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
+	try
+	{
+		std::cout << "test.promote() * 149 : ";
+		for (int i = 0; i < 149; i++)
+			test.promote();
+		std::cout << std::endl
+				  << "test : " << test << std::endl
+				  << "test.promote() : ";
+		test.promote();
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		std::cout << "Bureaucrat	test2(\"Michel2\", 151)" << std::endl;
+		Bureaucrat	test2("Michel", 151);
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		std::cout << "Bureaucrat	test2(\"Michel2\", 0)" << std::endl;
+		Bureaucrat	test2("Michel", 0);
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << "Bureaucrat	testCpy(test)" << std::endl;
+	Bureaucrat	testCpy(test);
+	std::cout << "testCpy.getGrade() : " << testCpy.getGrade() << std::endl
+			  << "testCpy.getName() : " << testCpy.getName() << std::endl;
 	return (0);
 }

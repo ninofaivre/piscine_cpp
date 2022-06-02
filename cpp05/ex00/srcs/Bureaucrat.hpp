@@ -6,13 +6,12 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 10:40:39 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/14 13:36:58 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/02 07:35:55 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-# include <string>
 # include <iostream>
 
 # define MAXGRADE 1
@@ -29,7 +28,7 @@ private:
 
 public:
 
-	Bureaucrat(const std::string name = "Slave", const int grade = 150);
+	Bureaucrat(const std::string &name = "Slave", const int grade = 150);
 	Bureaucrat(const Bureaucrat &otherInst);
 	~Bureaucrat(void);
 

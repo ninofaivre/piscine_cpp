@@ -6,13 +6,13 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:15:38 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/14 13:39:44 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/02 07:36:12 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(const std::string name, const int grade)
+Bureaucrat::Bureaucrat(const std::string &name, const int grade)
 : name(name)
 {
 	if (grade < MAXGRADE)
