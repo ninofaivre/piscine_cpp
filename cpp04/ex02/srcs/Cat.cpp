@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:29:32 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 15:27:59 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/01 23:36:14 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,9 @@ Cat	&Cat::operator=(const Cat &otherInst)
 void	Cat::makeSound(void) const
 {
 	std::cout << "MEEEOOOWWWWWW !!!" << std::endl;
+}
+
+Brain	*Cat::getBrain(void)
+{
+	return (this->ptrBrain);
 }

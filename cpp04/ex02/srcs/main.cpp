@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:19:24 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/06/02 00:01:19 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/02 13:38:13 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 #include <iostream>
-#include <exception>
 
 int	main(void)
 {
@@ -30,6 +29,33 @@ int	main(void)
 	}
 	for (int i = 0; i < 10; i++)
 		delete archeDeNoé[i];
-	//Animal	a; // not more working
+	Cat	*maow = new Cat();
+	for (int i = 0; i < 5; i++)
+		std::cout << *((*(maow->getBrain()))[i]) << std::endl;
+	std::cout << std::endl;
+
+	for (int i = 0; i < 5; i++)
+		*((*(maow->getBrain()))[i]) = "test";
+	Cat	*maow2 = new Cat();
+	for (int i = 0; i < 5; i++)
+		std::cout << *((*(maow2->getBrain()))[i]) << std::endl;
+	std::cout << std::endl;
+
+	*maow2 = *maow;
+	for (int i = 0; i < 5; i++)
+		std::cout << *((*(maow2->getBrain()))[i]) << std::endl;
+	std::cout << std::endl;
+
+	for (int i = 0; i < 5; i++)
+		*((*(maow2->getBrain()))[i]) = "testmaow2";
+	for (int i = 0; i < 5; i++)
+		std::cout << *((*(maow->getBrain()))[i]) << std::endl;
+	std::cout << std::endl;
+
+	for (int i = 0; i < 5; i++)
+		std::cout << *((*(maow2->getBrain()))[i]) << std::endl;
+	delete maow;
+	delete maow2;
+	//Animal	a; // Not working anymore
 	return (0);
 }

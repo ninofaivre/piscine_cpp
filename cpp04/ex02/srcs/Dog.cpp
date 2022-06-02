@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:29:32 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/13 15:27:39 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/01 23:36:26 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,9 @@ Dog	&Dog::operator=(const Dog &otherInst)
 void	Dog::makeSound(void) const
 {
 	std::cout << "WOOOUUUUUFFFF !!!" << std::endl;
+}
+
+Brain	*Dog::getBrain(void)
+{
+	return (this->ptrBrain);
 }
