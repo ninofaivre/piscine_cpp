@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:29:16 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/15 15:38:31 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/02 15:22:40 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ int	main(void)
 		Bureaucrat	boss("boss", 1);
 		Form	*test;
 		test = someRandomIntern.makeForm("presidential pardon", "though criminal");
-
-		std::cout << boss << std::endl
-				  << *test << std::endl;
-		boss.signForm(*test);
-		boss.executeForm(*test);
+		if (test)
+		 {
+			std::cout << boss << std::endl
+					  << *test << std::endl;
+			boss.signForm(*test);
+			boss.executeForm(*test);
+		 }
 		delete test;
 	}
 	catch (std::exception &e)

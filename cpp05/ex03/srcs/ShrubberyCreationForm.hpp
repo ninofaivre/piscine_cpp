@@ -6,14 +6,13 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 12:05:46 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/15 14:57:04 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/02 15:07:23 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 # include "Form.hpp"
-# include <string>
 
 # define TREE "\
          /\\\n\
@@ -54,5 +53,11 @@ public:
 	ShrubberyCreationForm(const std::string target = "Default Target (no one given)");
 	ShrubberyCreationForm(const ShrubberyCreationForm &otherInst);
 	~ShrubberyCreationForm(void);
+
+	class TouchFileFailed : public std::exception
+	{
+	public:
+		virtual const char	*what() const throw() { return ("TouchFileFailed"); }
+	};
 
 };
