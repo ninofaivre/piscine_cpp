@@ -6,13 +6,12 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 10:40:39 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/14 18:20:30 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/02 08:06:21 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-# include <string>
 # include <iostream>
 # include <stdexcept>
 
@@ -32,7 +31,7 @@ private:
 
 public:
 
-	Bureaucrat(const std::string name = "Slave", const int grade = 150);
+	Bureaucrat(const std::string &name = "Slave", const int grade = 150);
 	Bureaucrat(const Bureaucrat &otherInst);
 	~Bureaucrat(void);
 

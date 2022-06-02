@@ -6,14 +6,14 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 13:58:35 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/14 18:24:19 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/02 08:10:29 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(const std::string name, const int gradeToSign, const int gradeToExecute)
+Form::Form(const std::string &name, const int gradeToSign, const int gradeToExecute)
 : name(name), signedStatus(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {
 	if (gradeToSign < MAXGRADE || gradeToExecute < MAXGRADE)

@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 13:47:52 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/05/14 18:24:30 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/02 08:10:20 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ private:
 
 public:
 
-	Form(const std::string name, const int gradeToSign, const int gradeToExecute);
+	Form(const std::string &name, const int gradeToSign, const int gradeToExecute);
 	Form(const Form &otherInst);
 	~Form(void);
 
