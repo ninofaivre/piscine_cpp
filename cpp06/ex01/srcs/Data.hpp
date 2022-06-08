@@ -13,7 +13,7 @@
 #pragma once
 
 // there is a 's' in the subject ("data memberS") as my last evaluator said it is important !
-// maybe I should add a 26th var to see if the result is different ...
+// maybe I should add a 27th var to see if the result is different ...
 typedef struct s_data
 {
 	s_data(int start);
