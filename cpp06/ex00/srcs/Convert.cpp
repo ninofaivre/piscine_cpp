@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:13:17 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/06/01 16:25:36 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/08 16:28:16 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ Convert::Convert(void)
 {
 }
 
-Convert::Convert(const char *data)
-: value(strtod(data, NULL))
+Convert::Convert(const std::string &data)
+: value(strtod(data.c_str(), NULL))
 {
+	if (data.length() == 3 && data.at(0) == '\'' && data.at(2) == '\'')
+		this->value = static_cast<double>(data.at(1));
 }
 
 Convert::Convert(const Convert &otherInst)
@@ -83,15 +85,17 @@ void	Convert::displayFloat(void) const
 	float	f = static_cast<float>(this->value);
 
 	std::cout << "float: ";
+	std::cout << f;
 	if (f == static_cast<int>(this->value))
-		std::cout << std::fixed << std::setprecision(1);
-	std::cout << f << 'f' << std::endl;
+		std::cout << ".0";
+	std::cout << 'f' << std::endl;
 }
 
 void	Convert::displayDouble(void) const
 {
 	std::cout << "double: ";
+	std::cout << this->value;
 	if (this->value == static_cast<int>(this->value))
-		std::cout << std::fixed << std::setprecision(1);
-	std::cout << this->value << std::endl;
+		std::cout << ".0";
+	std::cout << std::endl;
 }
