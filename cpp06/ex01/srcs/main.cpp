@@ -6,12 +6,12 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:47:15 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/06/01 12:08:46 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/08 17:20:22 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Data.hpp"
-#include <iostream>
+#include <stdint.h>
 
 static uintptr_t	serialize(Data *ptr)
 {
@@ -25,30 +25,25 @@ static Data	*deserialize(uintptr_t raw)
 
 int	main(void)
 {
-	Data local1 (42);
+	Data local1 (0);
 	Data *ptr1 = &local1;
 	Data local2 (21);
 	Data *ptr2 = &local2;
-	std::cout << "Data local1 (42)" << std::endl
-			  << "Data *ptr1 = &local1" << std::endl
-			  << "Data local2 (21)" << std::endl
-			  << "Data *ptr2 = &local2" << std::endl
-			  << std::endl
-			  << "local1.getValue() : " << local1.getValue() << std::endl
-			  << "ptr1->getValue() : " << ptr1->getValue() << std::endl
-			  << "(*deserialize(serialize(ptr1))).getValue() : " << (*deserialize(serialize(ptr1))).getValue() << std::endl
-			  << "deserialize(serialize(ptr1))->getValue() : " << deserialize(serialize(ptr1))->getValue() << std::endl
-			  << std::endl;
+	local1.print();
+	ptr1->print();
+	(*deserialize(serialize(ptr1))).print();
 
 	uintptr_t	serialized1 = serialize(ptr1);
+	uintptr_t	serialized1Cpy = serialized1;
 	uintptr_t	serialized2 = serialize(ptr2);
 
-	std::cout << "uintptr_t serialized1 = serialize(ptr1)" << std::endl
-			  << "uintptr_t serialized2 = serialize(ptr2)" << std::endl
-			  << std::endl;
-
-	std::cout << "deserialize(serialized1 = serialized2)->getValue() : " << deserialize(serialized1 = serialized2)->getValue() << std::endl;
-	std::cout << "deserialize(serialized1)->getValue() : " << deserialize(serialized1)->getValue() << std::endl
-			  << "deserialize(serialized2)->getValue() : " << deserialize(serialized2)->getValue() << std::endl;
+	(deserialize(serialized1 = serialized2))->print();
+	/* same thing than :
+	serialized1 = serialized2;
+	Data  *tmp = deserialize(serialized1);
+	tmp->print();
+	*/
+	deserialize(serialized1Cpy)->print();
+	deserialize(serialized2)->print();
 	return (0);
 }
