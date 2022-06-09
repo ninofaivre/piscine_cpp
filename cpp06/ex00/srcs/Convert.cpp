@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:13:17 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/06/08 16:28:16 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/09 10:48:14 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Convert::Convert(void)
 Convert::Convert(const std::string &data)
 : value(strtod(data.c_str(), NULL))
 {
-	if (data.length() == 3 && data.at(0) == '\'' && data.at(2) == '\'')
+	if (data.length() >= 3 && data.at(0) == '\'' && data.at(2) == '\'')
 		this->value = static_cast<double>(data.at(1));
 }
 
