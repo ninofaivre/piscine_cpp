@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 12:38:57 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/06/08 17:35:44 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/09 10:55:27 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,18 +52,21 @@ static void	identify(Base &p)
 	{
 		dynamic_cast<A &>(p);
 		std::cout << 'A' << std::endl;
+		return ;
 	}
 	catch (std::exception &e) {}
 	try
 	{
 		dynamic_cast<B &>(p);
 		std::cout << 'B' << std::endl;
+		return ;
 	}
 	catch (std::exception &e) {}
 	try
 	{
 		dynamic_cast<C &>(p);
 		std::cout << 'C' << std::endl;
+		return ;
 	}
 	catch (std::exception &e) {}
 }
