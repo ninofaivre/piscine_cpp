@@ -6,7 +6,7 @@
 /*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 21:03:13 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/06/19 21:59:27 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/20 11:46:21 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ MutantStack<T>::~MutantStack(void)
 template <typename T>
 MutantStack<T>	&MutantStack<T>::operator=(const MutantStack<T> &otherInst)
 {
-	this->c = otherInst.c;
+	std::stack<T>::operator=(otherInst);
 	return (*this);
 }
 
