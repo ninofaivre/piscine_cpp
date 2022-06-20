@@ -6,7 +6,7 @@
 /*  By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:03:41 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/06/20 18:41:11 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/06/20 18:50:14 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@ void			Span::addNumber(const std::vector<int>::iterator start, const std::vector
 {
 	if (std::distance(start, stop) > static_cast<long int>(this->size - this->content.size()))
 		throw std::out_of_range("Range bigger than remaining space in Span");
-	for (std::vector<int>::iterator it = start; it != stop; it++)
-		this->content.push_back(*it);
+	this->content.insert(this->content.end(), start, stop);
 }
 
 unsigned int	Span::shortestSpan(void) const
