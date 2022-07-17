@@ -6,7 +6,7 @@
 /*  By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:03:41 by nfaivre           #+#    #+#             */
-/*   Updated: 2022/06/20 18:50:14 by nfaivre          ###   ########.fr       */
+/*   Updated: 2022/07/17 14:06:45 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,12 @@ unsigned int	Span::shortestSpan(void) const
 		throw std::logic_error("Not enough value in Span to provide shortestSpan");
 	std::sort(tmp.begin(), tmp.end());
 	shortestDiff = std::abs(tmp[0] - tmp[1]);
-	for (std::vector<int>::iterator a = tmp.begin(); a != tmp.end(); a++)
+	for (std::vector<int>::iterator it = (tmp.begin() + 1); it != tmp.end(); it++)
 	{
 		if (!shortestDiff)
 			break ;
-		for (std::vector<int>::iterator b = a + 1; b != tmp.end(); b++)
-		{
-			if (!shortestDiff)
-				break ;
-			if (std::abs(*a - *b) < shortestDiff)
-				shortestDiff = std::abs(*a - *b);
-		}
+		if (std::abs(*it - *(it - 1)) < shortestDiff)
+			shortestDiff = std::abs(*it - *(it - 1))
 	}
 	return (shortestDiff);
 }
